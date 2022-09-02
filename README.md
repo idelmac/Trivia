@@ -19,101 +19,10 @@ Developers using this project should already have Python, pip and node installed
 The project is designed with some key functional areas:
 
 ### Backend
-
-#### Install Dependencies
-
-1. **Python 3.7** - Follow instructions to install the latest version of python for your platform in the [python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
-
-2. **Virtual Environment** - We recommend working within a virtual environment whenever using Python for projects. This keeps your dependencies for each project separate and organized. Instructions for setting up a virual environment for your platform can be found in the [python docs](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
-
-3. **PIP Dependencies** - Once your virtual environment is setup and running, install the required dependencies by navigating to the `/backend` directory and running:
-
-```bash
-pip install -r requirements.txt
-```
-
-#### Key Pip Dependencies
-
-- [Flask](http://flask.pocoo.org/) is a lightweight backend microservices framework. Flask is required to handle requests and responses.
-
-- [SQLAlchemy](https://www.sqlalchemy.org/) is the Python SQL toolkit and ORM we"ll use to handle the lightweight SQL database. You"ll primarily work in `app.py`and can reference `models.py`.
-
-- [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/#) is the extension we"ll use to handle cross-origin requests from our frontend server.
-
-### Set up the Database
-
-With Postgres running, create a `trivia` database:
-
-```bash
-createbd trivia
-```
-
-Populate the database using the `trivia.psql` file provided. From the `backend` folder in terminal run:
-
-```bash
-psql trivia < trivia.psql
-```
-
-### Run the Server
-
-From within the `./src` directory first ensure you are working using your created virtual environment.
-
-To run the server, execute:
-
-```bash
-flask run --reload
-```
-
-The `--reload` flag will detect file changes and restart the server automatically.
-
+> View the [Backend README](./backend/README.md) for more details.
 
 ### Frontend
-
-#### Getting Setup
-
-> _tip_: this frontend is designed to work with [Flask-based Backend](../backend) so it will not load successfully if the backend is not working or not connected. We recommend that you **stand up the backend first**, and then the frontend should integrate smoothly.
-
-#### Installing Dependencies
-
-1. **Installing Node and NPM**
-   This project depends on Nodejs and Node Package Manager (NPM). Before continuing, you must download and install Node (the download includes NPM) from [https://nodejs.com/en/download](https://nodejs.org/en/download/).
-
-2. **Installing project dependencies**
-   This project uses NPM to manage software dependencies. NPM Relies on the package.json file located in the `frontend` directory of this repository. After cloning, open your terminal and run:
-
-```bash
-npm install
-```
-
-> _tip_: `npm i`is shorthand for `npm install``
-
-#### Running Your Frontend in Dev Mode
-
-The frontend app was built using create-react-app. In order to run the app in development mode use `npm start`. You can change the script in the `package.json` file.
-
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser. The page will reload if you make edits.
-
-```bash
-npm start
-```
-
-#### Request Formatting
-
-The frontend should be fairly straightforward and disgestible. You"ll primarily work within the `components` folder in order to understand, and if you so choose edit, the endpoints utilized by the components. While working on your backend request handling and response formatting, you can reference the frontend to view how it parses the responses.
-
-After you complete your endpoints, ensure you return to the frontend to confirm your API handles requests and responses appropriately:
-
-- Endpoints defined as expected by the frontend
-- Response body provided as expected by the frontend
-
-##### Optional: Updating Endpoints and API behavior
-
-Would you rather the API had different behavior - different endpoints, return the response body in a different format? Go for it! Make the updates to your API and the corresponding updates to the frontend so it works with your API seamlessly.
-
-##### Optional: Styling
-
-In addition, you may want to customize and style the frontend by editing the CSS in the `stylesheets` folder.
-
+> View the [Backend README](./frontend/README.md) for more details.
 
 ## API Reference
 
@@ -136,6 +45,15 @@ The API will return three error types when requests fail:
 - 409: Resources conflict
 - 422: Not Processable 
 
+### Expected success response
+For every success return, it is appended a success statement and status code 200, as shown below :
+```
+{
+    "success": True, 
+    "status": 200,
+    "data": {any object}
+}
+```
 
 ### Endpoints 
 #### GET /categories
